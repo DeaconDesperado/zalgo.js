@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/DeaconDesperado/zalgo.js/issues"
   },
-  "homepage": "https://github.com/DeaconDesperado/zalgo.js"
+  "homepage": "https://github.com/DeaconDesperado/zalgo.js",
+  "devDependencies": {
+    "coffee-script": "~1.7.1"
+  }
 }

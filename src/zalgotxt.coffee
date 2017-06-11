@@ -15,6 +15,10 @@ is_zalgo_char = (c) ->
   while i < zalgo_mid.length
     return true  if c is zalgo_mid[i]
     i++
+  i = 0
+  while i < zalgo_up.length
+    return true  if c is zalgo_up[i]
+    i++
   false
 
 zalgo = (txt, level = 0) ->
@@ -28,7 +32,7 @@ zalgo = (txt, level = 0) ->
     num_down = undefined
     
     newtxt += txt.substr(i, 1)
-    
+
     if level is 0
       num_up = rand(8)
       num_mid = rand(2)
@@ -47,6 +51,11 @@ zalgo = (txt, level = 0) ->
     while q < num_down
       newtxt += rand_zalgo(zalgo_down)
       q++
+    p = 0
+
+    while p < num_up
+      newtxt += rand_zalgo(zalgo_up)
+      p++
     i++
   newtxt
 zalgo_down = [
@@ -115,5 +124,47 @@ zalgo_mid = [
   "̷"
   "͡"
   "҉"
+]
+zalgo_up = [
+  "̍"
+  "̎"
+  "̄"
+  "̅"
+  "̿"
+  "̑"
+  "̆"
+  "̐"
+  "͒"
+  "͗"
+  "͑"
+  "̇"
+  "̈"
+  "̊"
+  "͂"
+  "̓"
+  "̈́"
+  "͊"
+  "͋"
+  "͌"
+  "̔"
+  "̽"
+  "̉"
+  "ͣ"
+  "ͤ"
+  "ͥ"
+  "ͦ"
+  "ͧ"
+  "ͨ"
+  "ͩ"
+  "ͪ"
+  "ͫ"
+  "ͬ"
+  "ͭ"
+  "ͮ"
+  "ͯ"
+  "̾"
+  "͛"
+  "͆"
+  "̚"
 ]
 module.exports = zalgo
